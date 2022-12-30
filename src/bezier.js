@@ -566,6 +566,12 @@ class Bezier {
     if (this._3d) {
       s += n1.z * n2.z;
     }
+    if (s > 1) {
+      s = 1;
+    }
+    if (s < -1) {
+      s = -1;
+    }
     return abs(acos(s)) < pi / 3;
   }
 
